@@ -67,7 +67,7 @@ Or if you want to initiate video call use CallOptions:
 ```
 let outgoingCall = await InfobipRTC.call(token, 'Alice', CallOptions.builder().setVideo(true).build());
 ```
-As you can see, the [`call`](https://github.com/infobip/infobip-rtc-react-native/wiki/InfobipRTC#call) method returns an instance of [`OutgoingCall`](https://github.com/infobip/infobip-rtc-react-native/wiki/OutgoingCall) as the result. With it you can track the status of your call and respond to events, for example when the called subscriber answers the call, rejects it, the call is ended, etc. You set up event handlers with the following code:
+As you can see, the [`call`](https://github.com/infobip/infobip-rtc-react-native/wiki/InfobipRTC#call) method returns an instance of [`OutgoingCall`](https://github.com/infobip/infobip-rtc-react-native/wiki/Call) as the result. With it you can track the status of your call and respond to events, for example when the called subscriber answers the call, rejects it, the call is ended, etc. You set up event handlers with the following code:
 
 ```
 outgoingCall.on('ringing', () => {
