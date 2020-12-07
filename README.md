@@ -52,11 +52,11 @@ You can call another subscriber if you know their identity. It is done via the [
 
 ```
 try {
-    let token = await obtainToken();
+    let token = await getToken();
     if (!token) {
       return showError('Error occurred while obtaining access token!');
     }
-    let outboundCall = await InfobipRTC.call(token, 'Alice');
+    let outgoingCall = await InfobipRTC.call(token, 'Alice');
   } catch (e) {
     console.log(e);
 }
