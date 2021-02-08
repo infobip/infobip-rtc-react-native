@@ -115,3 +115,18 @@ It is similar to calling the regular WebRTC user, you just use the [`callPhoneNu
 let token = await obtainToken();
 let phoneCall = await InfobipRTC.callPhoneNumber(token, '41793026727');
 ```
+\\
+#### Receiving a call via active connection
+The second way to receive a call is to connect once via WebSocket connection to our Infobip WebRTC platform, keep it active, and receive calls via that connection. All this is implemented in our SDK, you just need to call the [`registerForActiveConnection`](https://github.com/infobip/infobip-rtc-react-native/wiki/InfobipRTC#registerForActiveConnection) method to actually start listening for incoming calls. The second parameter is the listener that is fired upon the incoming call. 
+
+The downside of this approach is that your app will consume a significant amount of battery, because it persists the connection. Use it only when running on simulator (Dev enviroment).
+
+```
+let token = getToken();
+InfobipRTC.registerForActiveConnection(token, (incomingCall) => {
+    console.log('Received incoming call from: %s', incomingCall.source());
+    incomingCall.on('established', (e) => console.log('Call established.'));
+    incomingCall.accept();
+});
+```
+
