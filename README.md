@@ -43,7 +43,7 @@ You will receive the token in the response that you will use to make and receive
 
 ### Permissions
 
-####Android
+#### Android
 Audio calls require `RECORD_AUDIO` permission and video calls require `CAMERA` permission.
 
 You can get these permissions using the following code:
@@ -66,7 +66,7 @@ PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA).then((permissi
 });
 ```
 
-####iOS
+#### iOS
 Recording audio or video always requires explicit permission from the user.
 iOS requires that your app provide static messages to display to the user when the system asks for camera or microphone permission:
    * If your app uses device cameras, include the `NSCameraUsageDescription` key in your app’s Info.plist file.
@@ -160,7 +160,7 @@ let audioMuted = outgoingCall.muted();
 
 This is the recommended approach since it doesn't use much battery, as the connection is not kept alive, it only listens for incoming push notifications.  
 
-####iOS
+#### iOS
 In order to be able to receive incoming calls, your application needs to support several things:
 
 * VoIP Background mode enabled - `Xcode Project` > `Capabilites`> `Background Modes` and make sure the following options are checked:
@@ -206,7 +206,7 @@ InfobipRTC.handleIncomingCall(payload)
     });
 ```
 
-####Android
+#### Android
 [`Here`](https://firebase.google.com/docs/android/setup) you can find a complete tutorial on how to integrate Firebase with your app.
 In order to enable push notifications on Android, all you need to do is use the
 [`enablePushNotification`](https://github.com/infobip/infobip-rtc-react-native/wiki/InfobipRTC#enablePushNotification) method.
