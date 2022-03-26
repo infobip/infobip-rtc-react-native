@@ -267,7 +267,8 @@ with which you can do everything we described earlier.
 ```javascript
 try {
     let token = await getToken();
-    let phoneCall = await InfobipRTC.callPhoneNumber(token, '41793026727');
+    let options = new CallPhoneNumberOptions('33712345678', new RecordingOptions(true, false));
+    let phoneCall = await InfobipRTC.callPhoneNumber(token, '41793026727', options);
   } catch (e) {
     console.log(e);
 }
